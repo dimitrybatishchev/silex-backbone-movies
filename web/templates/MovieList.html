@@ -1,0 +1,28 @@
+<div class="page-header">
+    <h1>Список фильмов</h1>
+</div>
+<table class="table" id="todo-list">
+    <thead>
+    <tr>
+        <th>Номер</th>
+        <th>Название</th>
+        <th>Страна</th>
+        <th>Режиссер</th>
+        <th>Год выпуска</th>
+        <th>Жанр</th>
+    </tr>
+    </thead>
+    <tbody>
+        <% _.each( movies, function( movie ){ %>
+ 
+            <tr data-id="<%= movie.id %>">
+                <td><a href="#/movie/<%= movie.id %>"><%= movie.id %></a></td>
+                <td><a href="#/movie/<%= movie.id %>"><%= movie.title %></a></td>
+                <td><%= movie.country %></td>
+                <td><%= movie.director %></td>
+                <td><%= movie.year %></td>
+                <td><%= movie.genre %></td>
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
